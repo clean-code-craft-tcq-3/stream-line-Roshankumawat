@@ -10,5 +10,5 @@ def test_generate_samples(min_value, max_value, no_of_samples):
   
 if __name__ == '__main__':
   test_generate_samples(0, 40, 20)
-  test_generate_samples(0, 40, 40)
+  test_generate_samples(-10, 40, 40)
   
