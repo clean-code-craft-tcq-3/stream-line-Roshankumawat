@@ -1,20 +1,22 @@
 import random 
 
-def get_temperature(min_value,max_value,no_of_samples):
-    temperature_in_c=generate_samples(min_value,max_value,no_of_samples)
-    message= formate_message('Temperature', temperature_in_c)
-    return display_readings(message)
-  
-    
+def get_temperature_in_C(min_value,max_value,no_of_samples):
+    return generate_samples(min_value,max_value,no_of_samples)
+
+def celcious_to_farenheit_convertor(temp):
+    return round((temp * 1.8) + 32,2)
+     
 def generate_samples(min_value,max_value,no_of_samples):
-    result=random.sample(range(min_value, max_value),no_of_samples)
-    return result
+    return random.sample(range(min_value, max_value),no_of_samples)
   
 def get_charge_rate(min_value,max_value,no_of_samples):
-    charge_rate=generate_samples(min_value,max_value,no_of_samples)
-    message= formate_message('Charge Rate', charge_rate)
-    return display_readings(message)
-  
+    return generate_samples(min_value,max_value,no_of_samples)
+
+def process_data(temp_in_c, charge_rate):
+    data= {}
+    data.update({"Charge Rate" : charge_rate})
+    data.update({"Temperature" : temp_in_c})
+    return json.dumps(data_dict)
   
 def display_readings(message):
     print( message)
