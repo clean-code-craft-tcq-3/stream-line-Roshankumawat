@@ -1,4 +1,5 @@
 import random 
+import json
 
 def get_temperature_in_C(min_value,max_value,no_of_samples):
     return generate_samples(min_value,max_value,no_of_samples)
