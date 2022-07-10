@@ -17,7 +17,7 @@ def process_data(temp_in_c, charge_rate):
     data= {}
     data.update({"Charge Rate" : charge_rate})
     data.update({"Temperature" : temp_in_c})
-    return json.dumps(data_dict)
+    return json.dumps(data)
   
 def display_readings(message):
     print( message)
