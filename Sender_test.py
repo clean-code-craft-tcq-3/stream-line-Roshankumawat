@@ -14,14 +14,14 @@ class sender_test(unittest.TestCase):
     self.assertTrue(Sender.celcious_to_farenheit_convertor(50)==122)
   
   def test_get_temperature_in_C(self):
-    samples= Sender.get_temperature_in_C(10, 50, 50)
+    samples= Sender.get_temperature_in_C(0, 70, 50)
     for sample in samples:
-        self.assertTrue(sample in range (10, 50))
+        self.assertTrue(sample in range (0, 70))
   
   def test_get_charge_rate(self):
-    samples= Sender.get_charge_rate(0, 50, 50)
+    samples= Sender.get_charge_rate(0, 80, 50)
     for sample in samples:
-        self.assertTrue(sample in range (0, 50))
+        self.assertTrue(sample in range (0, 80))
  
  
 if __name__ == '__main__':
