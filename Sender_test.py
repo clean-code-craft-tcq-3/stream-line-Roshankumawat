@@ -8,13 +8,13 @@ def test_generate_samples(min_value, max_value, no_of_samples):
   assert(samples_length==no_of_samples)
   
 def test_celcious_to_farenheit_convertor():
-  assertTrue(Sender.celcious_to_farenheit_convertor(50)==122)
+  assert(Sender.celcious_to_farenheit_convertor(50)==122)
   
 def test_get_temperature_in_C():
-  assertTrue(Sender.get_temperature_in_C(10, 50, 50) in range (10, 50))
+  assert(Sender.get_temperature_in_C(10, 50, 50) in range (10, 50))
   
 def test_get_charge_rate():
-  assertTrue(Sender.get_charge_rate(0, 50, 50) in range(0, 50)) 
+  assert(Sender.get_charge_rate(0, 50, 50) in range(0, 50)) 
  
   
 if __name__ == '__main__':
