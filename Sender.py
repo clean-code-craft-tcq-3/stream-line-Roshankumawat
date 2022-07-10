@@ -17,7 +17,7 @@ def get_charge_rate(min_value,max_value,no_of_samples):
   
   
 def display_readings(message):
-    return message
+    print( message)
   
 def formate_message(attribute,readings):
     return "The {} readings- {}".format(attribute,readings)  
