@@ -27,7 +27,10 @@ class sender_test(unittest.TestCase):
     self.assertTrue(Sender.display_readings('Temperature is 50')=='Temperature is 50')
     
   def test_formate_message(self):
-    self.assertTrue(Sender.formate_message('Temperatue', 30)=='The Temperature readings- 30')
+    self.assertTrue(Sender.formate_message('Temperatue', 30)=='The Temperatue readings- 30')
+    
+  def test_process_data(self):
+    self.assertTrue(Sender.process_data(30, 1.0)==json.dumps({"Temperature":30,"Charge Rate":1.0})
  
  
 if __name__ == '__main__':
