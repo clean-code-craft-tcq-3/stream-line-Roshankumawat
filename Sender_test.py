@@ -22,6 +22,12 @@ class sender_test(unittest.TestCase):
     samples= Sender.get_charge_rate(0, 80, 50)
     for sample in samples:
         self.assertTrue(sample in range (0, 80))
+        
+  def test_display_readings(self):
+    self.assertTrue(Sender.display_readings('Temperature is 50')=='Temperature is 50')
+    
+  def test_formate_message(self):
+    self.assertTrue(Sender.formate_message('Temperatue', 30)=='Temperature is 30')
  
  
 if __name__ == '__main__':
