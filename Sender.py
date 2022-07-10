@@ -15,12 +15,13 @@ def get_charge_rate(min_value,max_value,no_of_samples):
 
 def process_data(temp_in_c, charge_rate):
     data= {}
-    data.update({"Charge Rate" : charge_rate})
     data.update({"Temperature" : temp_in_c})
+    data.update({"Charge Rate" : charge_rate})
+   
     return json.dumps(data)
   
 def display_readings(message):
-    print( message)
+    return message
   
 def formate_message(attribute,readings):
     return "The {} readings- {}".format(attribute,readings)  
