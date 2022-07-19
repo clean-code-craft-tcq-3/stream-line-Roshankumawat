@@ -15,23 +15,27 @@ class sender_test(unittest.TestCase):
     self.assertTrue(Sender.celcious_to_farenheit_convertor(50)==122)
   
   def test_get_temperature_in_C(self):
-    samples= Sender.get_temperature_in_C(0, 70, 50)
+    samples= Sender.get_temperature_in_C()
     for sample in samples:
-        self.assertTrue(sample in range (0, 70))
+        self.assertTrue(sample in range (0, 60))
   
   def test_get_charge_rate(self):
-    samples= Sender.get_charge_rate(0, 80, 50)
+    samples= Sender.get_charge_rate()
     for sample in samples:
-        self.assertTrue(sample in range (0, 80))
+        self.assertTrue(sample in range (20, 80))
         
-  def test_display_readings(self):
-    self.assertTrue(Sender.display_readings('Temperature is 50')=='Temperature is 50')
-    
-  def test_formate_message(self):
-    self.assertTrue(Sender.formate_message('Temperatue', 30)=='The Temperatue readings- 30')
-    
+  def test_pre_process(self):
+    self.assertTrue(sender.pre_process(2223,50) == json.dumps({"apms":5,"temp":122.0}))
+
+  def test_stream_data(self):
+    self.assertTrue(sender.stream_data(1) == "No of Streams Completed = 1")
+  
+  def test_main(self):
+    result = os.system("python Sender.py")
+    self.assertEqual(result, 0)
+ 
   def test_process_data(self):
-    self.assertTrue(Sender.process_data(30, 1.0)==json.dumps({"Temperature":30,"Charge Rate":1.0}))
+    self.assertTrue(Sender.process_data(30, 1.0)==json.dumps({"Temperature":86.0,"Charge Rate":1.0}))
  
  
 if __name__ == '__main__':
