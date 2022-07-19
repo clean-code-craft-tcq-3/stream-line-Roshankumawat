@@ -6,25 +6,17 @@ import os
 class sender_test(unittest.TestCase):
   
   def test_generate_samples(self):
-    # Expected no of samples and detected no of samples shall be same
-    expected_samples= 30
-    samples= Sender.generate_samples(10,50, 30)
-    samples_length= len(samples)
-    assert(samples_length==expected_samples)
-  
+    self.assertTrue(Sender.generate_samples(10,80) in range(10,80))
+
   def test_celcious_to_farenheit_convertor(self):
-    self.assertTrue(Sender.celcious_to_farenheit_convertor(50)==122)
+    self.assertTrue(Sender.celcious_to_farenheit_convertor(50)==122.0)
   
   def test_get_temperature_in_C(self):
-    samples= Sender.get_temperature_in_C()
-    for sample in samples:
-        self.assertTrue(sample in range (0, 60))
-  
+    self.assertTrue( Sender.get_temperature_in_C() in range (0, 60))
+      
   def test_get_charge_rate(self):
-    samples= Sender.get_charge_rate()
-    for sample in samples:
-        self.assertTrue(sample in range (20, 80))
-        
+    self.assertTrue(Sender.get_charge_rate() in range (20, 80))
+            
   def test_stream_data(self):
     self.assertTrue(Sender.stream_data(1) == "No of Streams Completed = 1")
   
