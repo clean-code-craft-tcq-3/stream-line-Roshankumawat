@@ -22,7 +22,7 @@ def process_data(temp_in_c, charge_rate):
   
 def stream_data(number):
     for i in range(number):
-        print(pre_process(get_temperature_in_C(), get_charge_rate()))
+        print(process_data(get_temperature_in_C(), get_charge_rate()))
     return "No of Streams Completed = {}".format(number)
   
 if __name__ == '__main__':
