@@ -1,6 +1,7 @@
 import Sender
 import unittest
 import json
+import os
 
 class sender_test(unittest.TestCase):
   
@@ -25,10 +26,10 @@ class sender_test(unittest.TestCase):
         self.assertTrue(sample in range (20, 80))
         
   def test_pre_process(self):
-    self.assertTrue(sender.pre_process(2223,50) == json.dumps({"apms":5,"temp":122.0}))
+    self.assertTrue(Sender.process_data(2223,50) == json.dumps({"apms":5,"temp":122.0}))
 
   def test_stream_data(self):
-    self.assertTrue(sender.stream_data(1) == "No of Streams Completed = 1")
+    self.assertTrue(Sender.stream_data(1) == "No of Streams Completed = 1")
   
   def test_main(self):
     result = os.system("python Sender.py")
