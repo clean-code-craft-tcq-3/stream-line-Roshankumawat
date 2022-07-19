@@ -25,9 +25,6 @@ class sender_test(unittest.TestCase):
     for sample in samples:
         self.assertTrue(sample in range (20, 80))
         
-  def test_pre_process(self):
-    self.assertTrue(Sender.process_data(2223,50) == json.dumps({"apms":5,"temp":122.0}))
-
   def test_stream_data(self):
     self.assertTrue(Sender.stream_data(1) == "No of Streams Completed = 1")
   
