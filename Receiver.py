@@ -53,6 +53,8 @@ def print_signal_statistics(input_from_sender, signal_statistics):
     print(f"Max charge = {signal_statistics.max_charge_value}")
     print(f"Min charge = {signal_statistics.min_charge_value}")
 
+    
+    
 
 if __name__ == '__main__':
     signal_stat = SignalStatistic()
